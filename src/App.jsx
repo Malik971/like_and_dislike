@@ -1,5 +1,6 @@
 import "./App.css";
 import Compteur from "./composants/Compteur";
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import Navbar from "./composants/Navbar";
 import Post from "./composants/Post";
@@ -63,6 +64,7 @@ export default function App() {
 
   return (
     <div className="App">
+      <Link to="/Compteur">Compteur</Link>
       <Navbar nombrelike = {nombrelike.length} />
       {posts.map((p) => (
         <Post

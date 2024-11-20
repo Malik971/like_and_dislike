@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Compteur(props) {
   const [compteur, setCompteur] = useState(0);
@@ -7,13 +8,16 @@ function Compteur(props) {
   };
   const decrement = () => {
     setCompteur(compteur - 1);
-  }
+  };
   return (
-    <div className="compteur">
-      <button onClick={increment}>plus</button>
-      <p className={compteur < 0 && "erreur"}>{compteur}</p>
-      <button onClick={decrement}>moins</button>
-    </div>
+    <>
+      <Link to="/">Retour</Link>
+      <div className="compteur">
+        <button onClick={increment}>plus</button>
+        <p className={compteur < 0 && "erreur"}>{compteur}</p>
+        <button onClick={decrement}>moins</button>
+      </div>
+    </>
   );
 }
 
